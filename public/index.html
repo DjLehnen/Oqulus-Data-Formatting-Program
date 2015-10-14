@@ -28,12 +28,12 @@
                         <th>VarD</th>
                     </tr>
                 </thead>
-                <tbody id = "table-body" ng-repeat = "x in output">
+                <tbody id = "table-body" ng-repeat = "output in dataSets">
                     <tr>
-                        <th> {{ data1 }} </th>
-                        <th> {{ data2 }} </th>
-                        <th> {{ data3 }} </th>
-                        <th> {{ data4 }} </th>
+                        <th> {{ output.data1 }} </th>
+                        <th> {{ output.data2 }} </th>
+                        <th> {{ output.data3 }} </th>
+                        <th> {{ output.data4 }} </th>
                     </tr>
                 </tbody>
             </table>
