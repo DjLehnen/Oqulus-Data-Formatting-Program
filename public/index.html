@@ -5,6 +5,10 @@
     <title>Oqulus Data Filter</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src='js/angular-upload.js'></script>
+    <link rel="stylesheet" href="css/btnUpload.min.css">
+    
+    
 </head>
 <body class = "container" ng-controller = "DataController">
     <div class="dropdown col-md-2">
@@ -19,21 +23,22 @@
     </div>
     <div class="col-md-10">
         <div>
+           
+           <button class="btn btn-primary btn-upload" url="">Choose File</button>
+           
             <table class="table">
                 <thead>
                     <tr>
-                        <th>VarA</th>
-                        <th>VarB</th>
-                        <th>VarC</th>
-                        <th>VarD</th>
+                        <th ng-repeat = "column in columnCount"></th>
                     </tr>
                 </thead>
-                <tbody id = "table-body" ng-repeat = "output in dataSets">
-                    <tr>
+                <tbody id = "table-body">
+                    <tr ng-repeat = "output in dataSets">
                         <th> {{ output.data1 }} </th>
                         <th> {{ output.data2 }} </th>
                         <th> {{ output.data3 }} </th>
                         <th> {{ output.data4 }} </th>
+                        <th> {{ output.data5 }} </th>
                     </tr>
                 </tbody>
             </table>

@@ -1,0 +1,22 @@
+{
+  "name": "oqulusdatalayout",
+  "version": "1.0.0",
+  "description": "data file presentation program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DjLehnen/Oqulus-Data-Formatting-Program.git"
+  },
+  "author": "Daniel Lehnen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DjLehnen/Oqulus-Data-Formatting-Program/issues"
+  },
+  "homepage": "https://github.com/DjLehnen/Oqulus-Data-Formatting-Program#readme",
+  "dependencies": {
+    "angular-upload": "^1.0.13"
+  }
+}
