@@ -24,14 +24,16 @@
     <div class="col-md-10">
         <div>
            
-           <button class="btn btn-primary btn-upload" url="">Choose File</button>
+           <div class="btn btn-primary btn-upload" url="/upload" upload-button>Choose File</div>
            
             <table class="table">
+<!--
                 <thead>
                     <tr>
                         <th ng-repeat = "column in columnCount"></th>
                     </tr>
                 </thead>
+-->
                 <tbody id = "table-body">
                     <tr ng-repeat = "output in dataSets">
                         <th> {{ output.data1 }} </th>
