@@ -1,4 +1,4 @@
-var app = angular.module("ngOqulus", ['lr.upload']);
+var app = angular.module("ngOqulus", ["lr.upload", "ngRoute"]);
 
 var setLength = 4;
 
@@ -7,11 +7,6 @@ var testData = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
 app.controller("DataController", function($scope){
     $scope.dataSets = [];
-    $scope.columnCount = [];
-    
-    $scope.columnNumber = function(){
-        
-    };
     
     $scope.outputLoop = function(){
             
@@ -31,4 +26,25 @@ app.controller("DataController", function($scope){
     }; 
 })
 
+app.config(["$routeProvider", function($routeProvider){
+    $routeProvider
+    .when("/7columns",{
+        templatUrl: "html/7columns.html",
+        controller: "DataController"
+    })
+    .when("/8columns",{
+        templateUrl: "html/8columns.html",
+        controller: "8Controller"
+    })
+    .otherwise({
+        rediectTo: "/home"
+    });
+}]);
 
+app.controller("7Controller", function($scope){
+
+});
+
+app.controller("8Controller", function($scope){
+
+});

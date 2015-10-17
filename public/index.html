@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src='js/angular-upload.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-route.min.js"></script>
     <link rel="stylesheet" href="css/btnUpload.min.css">
     
     
@@ -15,9 +16,8 @@
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose File Type 
         <span class = "caret"></span></button>
         <ul class="dropdown-menu">
-            <li><a href="#">Method</a></li>
-            <li><a href="#">Overlay</a></li>
-            <li><a href="#">Reference</a></li>
+            <li><a href="#/7columns">7 column</a></li>
+            <li><a href="#/8columns">8 column</a></li>
         </ul>
         <button class="btn btn-danger" type="button" ng-click = "outputLoop()">A button</button>
     </div>
@@ -26,14 +26,9 @@
            
            <div class="btn btn-primary btn-upload" url="/upload" upload-button>Choose File</div>
            
-            <table class="table">
-<!--
-                <thead>
-                    <tr>
-                        <th ng-repeat = "column in columnCount"></th>
-                    </tr>
-                </thead>
--->
+            <div ng-view></div>
+            
+            <table class = "table"> 
                 <tbody id = "table-body">
                     <tr ng-repeat = "output in dataSets">
                         <th> {{ output.data1 }} </th>
@@ -41,9 +36,12 @@
                         <th> {{ output.data3 }} </th>
                         <th> {{ output.data4 }} </th>
                         <th> {{ output.data5 }} </th>
+                        <th> {{ output.data6 }} </th>
+                        <th> {{ output.data7 }} </th>
                     </tr>
                 </tbody>
             </table>
+            
         </div>    
    </div>
     
