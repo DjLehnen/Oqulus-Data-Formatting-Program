@@ -30,20 +30,29 @@ app.config(["$routeProvider", function($routeProvider){
     $routeProvider
     .when("/7columns",{
         templatUrl: "html/7columns.html",
-        controller: "DataController"
+        controller: "7Controller"
     })
     .when("/8columns",{
         templateUrl: "html/8columns.html",
         controller: "8Controller"
     })
     .otherwise({
-        rediectTo: "/home"
+        rediectTo: "/7columns"
     });
 }]);
 
-app.controller("7Controller", function($scope){
+app.controller("7Controller", function($scope, $http){
+  $scope.formData = {};
 
+  $scope.outputFile = function(){
+    $scope.formData.completed = false;
+    $http.post("/upload" , $scope.formData)
+          .then(function(response){
+            $scope.formData = {};
+          });
+  };
 });
+
 
 app.controller("8Controller", function($scope){
 
