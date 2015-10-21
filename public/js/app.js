@@ -1,12 +1,28 @@
 var app = angular.module("ngOqulus", ["lr.upload", "ngRoute"]);
 
-var setLength = 4;
+var setLength = 8;
 
-var testData = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+//This listens for a file upload and reads the entire contents
+function readSingleFile(evt) {
+    var f = evt.target.files[0]; 
 
+    if (f) {
+        var r = new FileReader();
+        r.onload = function(e) { 
+            var contents = e.target.result;
+                rawText = contents;
+                textArray = rawText.split(/[\s,]+/);
+                console.log(textArray);
+        }
+                r.readAsText(f);
+    }
+        else { 
+            alert("Failed to load file");
+        }   
+};
 
-
-
+document.getElementById('file-input').addEventListener('change', readSingleFile, false);
+//end file content reader
 
 
 
@@ -16,8 +32,8 @@ app.controller("DataController", function($scope){
     
     $scope.outputLoop = function(){
             
-        for (i=0; i<testData.length; i = i + setLength){
-            outputSet = testData.slice(i,i + setLength)
+        for (i=0; i<textArray.length; i = i + setLength){
+            outputSet = textArray.slice(i ,i + setLength)
             console.log(outputSet);
             var output = {
                 data1: outputSet[0],
@@ -25,6 +41,9 @@ app.controller("DataController", function($scope){
                 data3: outputSet[2],
                 data4: outputSet[3],
                 data5: outputSet[4],
+                data6: outputSet[5],
+                data7: outputSet[6],
+                data8: outputSet[7]
             }
             
             $scope.dataSets.push(output);

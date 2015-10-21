@@ -11,7 +11,7 @@
     
     
 </head>
-<body class = "container" ng-controller = "DataController">
+<body  ng-controller = "DataController">
     <div class="dropdown col-md-2">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose File Type 
         <span class = "caret"></span></button>
@@ -26,7 +26,7 @@
         
     </div>
     <div class="col-md-10">
-        <div>
+        <div class="table-responsive">
            
 <!--           <div class="btn btn-primary btn-upload" url="/upload" upload-button>Choose File</div>-->
            
@@ -42,6 +42,7 @@
                         <th> {{ output.data5 }} </th>
                         <th> {{ output.data6 }} </th>
                         <th> {{ output.data7 }} </th>
+                        <th> {{ output.data8 }} </th>
                     </tr>
                 </tbody>
             </table>
@@ -52,26 +53,6 @@
     <script src="js/app.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script type="text/javascript">
-  function readSingleFile(evt) {
-    //Retrieve the first (and only!) File from the FileList object
-    var f = evt.target.files[0]; 
 
-    if (f) {
-      var r = new FileReader();
-      r.onload = function(e) { 
-          console.log(e);
-	      var contents = e.target.result;
-            rawText = contents;
-            console.log(rawText);
-      }
-      r.readAsText(f);
-    } else { 
-      alert("Failed to load file");
-    }
-  }
-
-  document.getElementById('file-input').addEventListener('change', readSingleFile, false);
-</script>
 </body>
 </html>
