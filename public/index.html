@@ -21,10 +21,14 @@
         </ul>
         <button class="btn btn-danger" type="button" ng-click = "outputLoop()"  ng-controller = "7Controller">A button</button>
     </div>
+    <div>
+        <input type="file" id = "file-input">
+        
+    </div>
     <div class="col-md-10">
         <div>
            
-           <div class="btn btn-primary btn-upload" url="/upload" upload-button>Choose File</div>
+<!--           <div class="btn btn-primary btn-upload" url="/upload" upload-button>Choose File</div>-->
            
             <div ng-view></div>
             
@@ -48,5 +52,25 @@
     <script src="js/app.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+  function readSingleFile(evt) {
+    //Retrieve the first (and only!) File from the FileList object
+    var f = evt.target.files[0]; 
+
+    if (f) {
+      var r = new FileReader();
+      r.onload = function(e) { 
+          console.log(e);
+	      var contents = e.target.result;
+            console.log(contents);
+      }
+      r.readAsText(f);
+    } else { 
+      alert("Failed to load file");
+    }
+  }
+
+  document.getElementById('file-input').addEventListener('change', readSingleFile, false);
+</script>
 </body>
 </html>
