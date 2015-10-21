@@ -62,7 +62,8 @@
       r.onload = function(e) { 
           console.log(e);
 	      var contents = e.target.result;
-            console.log(contents);
+            rawText = contents;
+            console.log(rawText);
       }
       r.readAsText(f);
     } else { 
