@@ -12,7 +12,7 @@ function readSingleFile(evt) {
         r.onload = function(e) { 
             var contents = e.target.result;
                 rawText = contents;
-                textArray = rawText.split(/[\s,]+/);
+                textArray = rawText.split(",");
         }
                 r.readAsText(f);
     }
@@ -61,16 +61,17 @@ app.controller("DataController", function($scope){
             arraySum = arraySum + avgArray[i];
             console.log(arraySum);
         };
+        //Calculate Average
         $scope.average = (arraySum / avgArray.length);
         console.log("Average: ", $scope.average);
         
-            if (avgArray[((avgArray.length)/2)] === undefined){
-                arrayMedian = (avgArray[(((avgArray.length)/2) + 0.5)]);
+        //Calculate Median
+            if (Number.isInteger(avgArray[(avgArray.length)/2]) === false){
+                arrayMedian = avgArray[(((avgArray.length)/2)+0.5)];
             }
         
             else{
-                arrayMedian = (avgArray[((avgArray.length)/2)]);
-
+                arrayMedian = (avgArray[((avgArray.length)/2)] + avgArray[((avgArray.length)/(2+1))]) / 2;
             }
         console.log("Median: ", arrayMedian);
         
