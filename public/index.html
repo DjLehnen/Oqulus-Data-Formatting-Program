@@ -22,7 +22,7 @@
         <button class="btn btn-danger" type="button" ng-click = "outputLoop()"  ng-controller = "7Controller">A button</button>
     </div>
     <div>
-        <input type="file" id = "file-input">
+        <input type="file" id = "file-input" class="btn btn-success">
         
     </div>
     <div class="col-md-10">
@@ -32,7 +32,7 @@
            
             <div ng-view></div>
             
-            <table class = "table"> 
+            <table class = "table well"> 
                 <tbody id = "table-body">
                     <tr ng-repeat = "output in dataSets">
                         <th> {{ output.data1 }} </th>

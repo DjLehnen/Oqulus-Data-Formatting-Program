@@ -1,6 +1,7 @@
 var app = angular.module("ngOqulus", ["lr.upload", "ngRoute"]);
 
 var setLength = 8;
+var avgAdd = 0
 
 //This listens for a file upload and reads the entire contents
 function readSingleFile(evt) {
@@ -12,7 +13,6 @@ function readSingleFile(evt) {
             var contents = e.target.result;
                 rawText = contents;
                 textArray = rawText.split(/[\s,]+/);
-                console.log(textArray);
         }
                 r.readAsText(f);
     }
@@ -24,17 +24,23 @@ function readSingleFile(evt) {
 document.getElementById('file-input').addEventListener('change', readSingleFile, false);
 //end file content reader
 
-
+// /[\s,]+/
 
 
 app.controller("DataController", function($scope){
     $scope.dataSets = [];
-    
+    var avgArray = [];
     $scope.outputLoop = function(){
-            
-        for (i=0; i<textArray.length; i = i + setLength){
+                    
+        for (i=8; i<textArray.length; i = i + setLength){
             outputSet = textArray.slice(i ,i + setLength)
-            console.log(outputSet);
+            
+            
+            
+            avgAdd = avgArray.push(outputSet[0])
+            console.log(avgArray)
+            
+            
             var output = {
                 data1: outputSet[0],
                 data2: outputSet[1],
