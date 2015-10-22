@@ -30,30 +30,52 @@ document.getElementById('file-input').addEventListener('change', readSingleFile,
 app.controller("DataController", function($scope){
     $scope.dataSets = [];
     var avgArray = [];
+    var arraySum = 0;
+    var arrayMin = 0;
+    var arrayMax = 0;
+    var arrayMedian = 0;
+    $scope.average = 0;
     $scope.outputLoop = function(){
                     
         for (i=8; i<textArray.length; i = i + setLength){
             outputSet = textArray.slice(i ,i + setLength)
             
-            
-            
             avgAdd = avgArray.push(outputSet[0])
-            console.log(avgArray)
             
             
-            var output = {
-                data1: outputSet[0],
-                data2: outputSet[1],
-                data3: outputSet[2],
-                data4: outputSet[3],
-                data5: outputSet[4],
-                data6: outputSet[5],
-                data7: outputSet[6],
-                data8: outputSet[7]
-            }
-            
-            $scope.dataSets.push(output);
+//            var output = {
+//                data1: outputSet[0],
+//                data2: outputSet[1],
+//                data3: outputSet[2],
+//                data4: outputSet[3],
+//                data5: outputSet[4],
+//                data6: outputSet[5],
+//                data7: outputSet[6],
+//                data8: outputSet[7]
+//            }
+//            
+//            $scope.dataSets.push(output);
         };
+        for(i=0; i<avgArray.length; i++) {
+            avgArray[i] = +avgArray[i];
+            arraySum = arraySum + avgArray[i];
+            console.log(arraySum);
+        };
+        $scope.average = (arraySum / avgArray.length);
+        console.log("Average: ", $scope.average);
+        
+            if (avgArray[((avgArray.length)/2)] === undefined){
+                arrayMedian = (avgArray[(((avgArray.length)/2) + 0.5)]);
+            }
+        
+            else{
+                arrayMedian = (avgArray[((avgArray.length)/2)]);
+
+            }
+        console.log("Median: ", arrayMedian);
+        
+        
+        
     }; 
 })
 
