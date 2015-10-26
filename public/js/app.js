@@ -1,7 +1,6 @@
 var app = angular.module("ngOqulus", ["lr.upload", "ngRoute"]);
 
 var setLength = 8;
-var avgAdd = 0
 
 //This listens for a file upload and reads the entire contents
 function readSingleFile(evt) {
@@ -12,7 +11,7 @@ function readSingleFile(evt) {
         r.onload = function(e) { 
             var contents = e.target.result;
                 rawText = contents;
-                textArray = rawText.split(",");
+                textArray = rawText.split(/[\s,]+/);
         }
                 r.readAsText(f);
     }
@@ -30,6 +29,7 @@ document.getElementById('file-input').addEventListener('change', readSingleFile,
 app.controller("DataController", function($scope){
     $scope.dataSets = [];
     var avgArray = [];
+    var avgAdd = 0;
     var arraySum = 0;
     var arrayMin = 0;
     var arrayMax = 0;
@@ -55,7 +55,12 @@ app.controller("DataController", function($scope){
 //            }
 //            
 //            $scope.dataSets.push(output);
+            
+        //convert String array into Number array and calculate sum total
         };
+        
+        avgAdd = avgArray.splice(-1,1)
+        
         for(i=0; i<avgArray.length; i++) {
             avgArray[i] = +avgArray[i];
             arraySum = arraySum + avgArray[i];
@@ -66,19 +71,35 @@ app.controller("DataController", function($scope){
         console.log("Average: ", $scope.average);
         
         //Calculate Median
-            if (Number.isInteger(avgArray[(avgArray.length)/2]) === false){
-                arrayMedian = avgArray[(((avgArray.length)/2)+0.5)];
-            }
         
-            else{
-                arrayMedian = (avgArray[((avgArray.length)/2)] + avgArray[((avgArray.length)/(2+1))]) / 2;
+       function median(value) {
+
+            value.sort( function(a,b) {return a - b;} );
+
+            var half = Math.floor(value.length/2);
+
+            if(value.length % 2){
+                return value[half];
             }
-        console.log("Median: ", arrayMedian);
+
+            else{
+                return (value[half-1] + value[half]) / 2.0;
+            }
+
+       }
+                   console.log(median(avgArray));
+
+       
+        //Find Min and Max value
+        var maxValue = Math.max(...avgArray);
+        var minValue = Math.min(...avgArray);
+        console.log("Max: ",maxValue);
+        console.log("Min: ",minValue);
         
         
         
     }; 
-})
+});
 
 app.config(["$routeProvider", function($routeProvider){
     $routeProvider
