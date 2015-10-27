@@ -1,0 +1,101 @@
+[33mcommit 15e1cc192c68e75b3f7d21ad57bc6622449fa836[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Mon Oct 26 19:48:34 2015 -0400
+
+    cleaned up some unnecessary code
+
+[33mcommit 5f974e632a8ff3e539634cbbf76b6c72529d5d43[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Mon Oct 26 19:08:10 2015 -0400
+
+    median function ACTUALLY works now
+
+[33mcommit 7f981f802b09dd3f5253a214b6a0fe1ca8710464[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Thu Oct 22 19:34:05 2015 -0400
+
+    changed median calculation to actually calculat median.
+
+[33mcommit aa3e140b2d2e78b7883fe3c34ed897eac07357a2[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Thu Oct 22 19:08:03 2015 -0400
+
+    now calculates the average and median of given data column
+
+[33mcommit caffc1f3c72fe5f45a5adfd138bcd793a18e51b6[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Thu Oct 22 18:32:06 2015 -0400
+
+    created an array for a single column of data to utilize for average, min, max, etc
+
+[33mcommit 2ad26b51ff37e5be24799bf98703c49101508811[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Wed Oct 21 19:53:01 2015 -0400
+
+    changed array separation code to read necessary files and use the file content as it's array instead of a placeholder array
+
+[33mcommit 16f9b361fe5a58eb5717cd8a1ebc5131ec85df69[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 20 20:40:29 2015 -0400
+
+    removed unneeded dependencies from server
+
+[33mcommit 4d7a96772b9cca5a24c22f2eca1ca85ef54ad2c4[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 20 20:34:35 2015 -0400
+
+    found out I was trying to do the wrong thing, learned a lot about uploading files though. Now you can select a file and recieve it's contents as a string
+
+[33mcommit 0d33f45e7550a19f39d7b78cd3ec615957b0b838[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Mon Oct 19 20:26:39 2015 -0400
+
+    upload actually 'works', doesn't return an internal server error anymore. Next I need to figure out how to access the body text of the file
+
+[33mcommit 0eefd741d8dd243abc9d2bd4448927504bd4a76b[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Fri Oct 16 20:04:45 2015 -0400
+
+    Set up basic server, ngRoute added but doesn't work yet >:(
+
+[33mcommit 54476826e2d515c66e5a02003e45a4df76284898[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Fri Oct 16 19:06:31 2015 -0400
+
+    added file upload button, need to now figure out how to utilize uploaded file
+
+[33mcommit cc09afd9263bf6b3fd8ec40c70c62347b34a515f[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Fri Oct 16 18:49:07 2015 -0400
+
+    added angular-upload module and linked to necessary files
+
+[33mcommit 90ac4c626e27fc448f0700de03b881631b8065fe[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 13 20:32:26 2015 -0400
+
+    data output functioning, creates table entries until all data has been displayed. Next I need to make # of table columns dynamically changeable while retaining functionality
+
+[33mcommit b42cfa67494506841cb3730185790e83fcc4d0c5[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 13 20:15:50 2015 -0400
+
+    added angular app and controller, next I need to utilize ng-repeat to display dynamic data
+
+[33mcommit 83d794b3fe86acca019fe9681ffa7b453ce9700f[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 13 19:35:49 2015 -0400
+
+    figured out basic array formatting
+
+[33mcommit d03a4ab17e893f2e1aaf9a4443f3b6d215549b7b[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 13 18:47:23 2015 -0400
+
+    linked to bootstrap, jquery, angular(if needed), made a simple dropdown for file type selection and began brainstorming data manipulation
+
+[33mcommit 1884e2be0dffd39a96ec43bae68b16fd8150a47d[m
+Author: Fistbutter <djlehnen@gmail.com>
+Date:   Tue Oct 13 17:46:47 2015 -0400
+
+    initial commit
