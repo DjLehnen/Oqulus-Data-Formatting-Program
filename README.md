@@ -12,3 +12,4 @@ The poorly named button, "A Button", is what processes the curently chosen file.
 ## Please note:
 Requires used of jsPDF which can be downloaded here: https://parall.ax/products/jspdf#
 
+Works for specifically formatted files, so unless you have a text file with numbers broken up by commas, it won't really do anything and might just break.
